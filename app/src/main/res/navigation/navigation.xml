@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/initFragment">
+    <fragment
+        android:id="@+id/initFragment"
+        android:name="com.example.cafeteria_nohands.src.InitFragment"
+        android:label="InitFragment" >
+        <action
+            android:id="@+id/action_initFragment_to_plato1Fragment"
+            app:destination="@id/plato1Fragment"
+            app:popUpTo="@id/plato1Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/plato1Fragment"
+        android:name="com.example.cafeteria_nohands.src.fragment.pedido.Plato1Fragment"
+        android:label="Plato1Fragment" >
+        <action
+            android:id="@+id/action_plato1Fragment_to_plato2Fragment"
+            app:destination="@id/plato2Fragment"
+            app:popUpTo="@id/plato2Fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/plato2Fragment"
+        android:name="com.example.cafeteria_nohands.src.fragment.pedido.Plato2Fragment"
+        android:label="Plato2Fragment" >
+        <action
+            android:id="@+id/action_plato2Fragment_to_plato3Fragment"
+            app:destination="@id/plato3Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/plato3Fragment"
+        android:name="com.example.cafeteria_nohands.src.fragment.pedido.Plato3Fragment"
+        android:label="Plato3Fragment" >
+        <action
+            android:id="@+id/action_plato3Fragment_to_pagarFragment"
+            app:destination="@id/pagarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pagarFragment"
+        android:name="com.example.cafeteria_nohands.src.fragment.compra.PagarFragment"
+        android:label="fragment_pagar"
+        tools:layout="@layout/fragment_pagar" />
+    <fragment
+        android:id="@+id/faqsFragment"
+        android:name="com.example.cafeteria_nohands.src.about.FaqsFragment"
+        android:label="fragment_faqs"
+        tools:layout="@layout/fragment_faqs" />
+    <fragment
+        android:id="@+id/contactoFragment"
+        android:name="com.example.cafeteria_nohands.src.about.ContactoFragment"
+        android:label="ContactoFragment" />
+    <fragment
+        android:id="@+id/historialFragment"
+        android:name="com.example.cafeteria_nohands.src.fragment.compra.HistorialFragment"
+        android:label="HistorialFragment" />
+</navigation>

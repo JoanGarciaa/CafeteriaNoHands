@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.cafeteria_nohands.src.model.OrderViewModel" />
+        <variable
+            name="plato1fragment"
+            type="com.example.cafeteria_nohands.src.fragment.pedido.Plato1Fragment" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/nohandscolor">
+
+        <Button
+            android:id="@+id/buttontoPlat1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="604dp"
+            android:text="Plato 1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+<!--            android:onClick="@{() -> viewModel.setOrderNames(viewModel.name)}"-->
+
+
+<!--        <Spinner-->
+<!--            android:id="@+id/spinnerPlato1"-->
+<!--            android:layout_width="254dp"-->
+<!--            android:layout_height="49dp"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/textViewPlato1" />-->
+
+        <TextView
+            android:id="@+id/textViewPlato1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="PRIMER PLATO"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="449dp"
+            android:layout_marginTop="35dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlato1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+

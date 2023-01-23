@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">cafeteria_nohands</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="textInit">NO HANDS</string>
+    <string name="textPlat1">PLATO 1</string>
+    <string name="textPlat2">PLATO 2</string>
+    <string name="textPostre">POSTRE</string>
+    <string name="textFAQS">FAQS</string>
+    <string name="textContacto">CONTACTO</string>
+    <string name="textPagar">PAGAR</string>
+    <string-array name="spinner_plat1">
+        <item>Selecciona</item>
+        <item>Macarrones al pesto</item>
+        <item>Pizza Hawaiana</item>
+        <item>Canelones de Foie</item>
+        <item>Bistec con patatas</item>
+        <item>Arroz a la cubana</item>
+    </string-array>
+    <string-array name="spinner_plat2">
+        <item>Selecciona</item>
+        <item>Pulpo a la gallega</item>
+        <item>Carne ahumada</item>
+        <item>Salmon ahumado</item>
+        <item>Carne rebozada con patatas</item>
+        <item>Melon con jamón</item>
+    </string-array>
+    <string-array name="spinner_postre">
+        <item>Selecciona</item>
+        <item>Tarta de queso</item>
+        <item>Natillas</item>
+        <item>Sorbete de limón</item>
+        <item>Arroz con leche</item>
+        <item>Coulant de chocolate</item>
+    </string-array>
+</resources>

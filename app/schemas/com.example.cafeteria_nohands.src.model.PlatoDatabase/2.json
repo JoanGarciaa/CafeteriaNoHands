@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "77df67e15a1ba8076b56a7dad753ed83",
+    "entities": [
+      {
+        "tableName": "platos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombrePlato` TEXT NOT NULL, `detallesPlato` TEXT NOT NULL, `precioPlato` INTEGER NOT NULL, `imgPlato` INTEGER NOT NULL, PRIMARY KEY(`nombrePlato`))",
+        "fields": [
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombrePlato",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "detalles",
+            "columnName": "detallesPlato",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "precio",
+            "columnName": "precioPlato",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "imgPlato",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nombrePlato"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '77df67e15a1ba8076b56a7dad753ed83')"
+    ]
+  }
+}
