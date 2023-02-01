@@ -6,21 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.constraintlayout.helper.widget.Carousel.Adapter
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteria_nohands.R
 import com.example.cafeteria_nohands.databinding.FragmentPagarBinding
-import com.example.cafeteria_nohands.databinding.FragmentPlato1Binding
 import com.example.cafeteria_nohands.src.adapter.PlatoRVAdapter
 import com.example.cafeteria_nohands.src.adapter.RecyclerClickListener
-import com.example.cafeteria_nohands.src.data.Provider
-import com.example.cafeteria_nohands.src.model.OrderViewModel
-import com.example.cafeteria_nohands.src.model.Plato
+import com.example.cafeteria_nohands.src.viewmodel.OrderViewModel
 
 
 class PagarFragment : Fragment() {
@@ -45,23 +40,23 @@ class PagarFragment : Fragment() {
         setRecyclerView()
         observePlato()
 
-
+        binding.buttonPagar.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_pagarFragment_to_historialFragment)
+            Toast.makeText(requireContext(),"Gracias por tu compra! BUEN PROVECHO!" , Toast.LENGTH_SHORT).show()
+        }
         setHasOptionsMenu(true)
         return binding.root
     }
 
     private fun setRecyclerView() {
-
         val platoRecyclerview = binding.recyclerView
         platoRecyclerview.layoutManager = LinearLayoutManager(requireContext())
         platoRecyclerview.setHasFixedSize(true)
         adapter = PlatoRVAdapter()
         adapter.setItemListener(object : RecyclerClickListener {
-
             override fun onItemClick(position: Int) {
                 Toast.makeText(requireContext(),"Hol" , Toast.LENGTH_SHORT).show()
             }
-
         })
         platoRecyclerview.adapter = adapter
     }

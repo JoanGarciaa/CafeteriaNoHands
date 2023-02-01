@@ -1,18 +1,16 @@
-package com.example.cafeteria_nohands.src.model;
+package com.example.cafeteria_nohands.src.viewmodel;
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import com.example.cafeteria_nohands.src.model.Plato
 import com.example.cafeteria_nohands.src.repository.PlatoRepositori
 
 public class OrderViewModel : ViewModel() {
 
     val listData = ArrayList<Plato>()
-
     var plato : LiveData<List<Plato>>?=null;
-    var usuari : LiveData<List<Usuari>>?=null;
+
 
     fun setPlato(plato: Plato){
         listData.add(plato)
@@ -37,10 +35,7 @@ public class OrderViewModel : ViewModel() {
         return plato
     }
 
-    fun loginClient(context: Context, nombre: String, passw: String): LiveData<List<Usuari>>?{
-        usuari = PlatoRepositori.userLogin(context,nombre,passw)
-        return usuari
-    }
+
 
 
 

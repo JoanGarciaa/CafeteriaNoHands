@@ -13,14 +13,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cafeteria_nohands.R
-import com.example.cafeteria_nohands.databinding.FragmentPlato1Binding
 import com.example.cafeteria_nohands.databinding.FragmentPlato2Binding
 import com.example.cafeteria_nohands.src.adapter.PlatoRVAdapter
 import com.example.cafeteria_nohands.src.adapter.RecyclerClickListener
 //import com.example.cafeteria_nohands.src.adapter.ListAdapter
-import com.example.cafeteria_nohands.src.data.Provider
-import com.example.cafeteria_nohands.src.model.OrderViewModel
-import com.example.cafeteria_nohands.src.model.Plato
+import com.example.cafeteria_nohands.src.viewmodel.OrderViewModel
 
 class Plato2Fragment : Fragment() {
 

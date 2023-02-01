@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteria_nohands.R
 import com.example.cafeteria_nohands.src.model.Plato
 
-class PlatoRVAdapter : ListAdapter<Plato, PlatoRVAdapter.PlatoHolder>(DiffCallback()) {
+class   PlatoRVAdapter : ListAdapter<Plato, PlatoRVAdapter.PlatoHolder>(DiffCallback()) {
 
     class PlatoHolder(view:View): RecyclerView.ViewHolder(view)
     private lateinit var listener: RecyclerClickListener

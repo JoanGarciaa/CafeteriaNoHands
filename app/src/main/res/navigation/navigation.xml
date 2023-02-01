@@ -44,7 +44,11 @@
         android:id="@+id/pagarFragment"
         android:name="com.example.cafeteria_nohands.src.fragment.compra.PagarFragment"
         android:label="fragment_pagar"
-        tools:layout="@layout/fragment_pagar" />
+        tools:layout="@layout/fragment_pagar" >
+        <action
+            android:id="@+id/action_pagarFragment_to_historialFragment"
+            app:destination="@id/historialFragment" />
+    </fragment>
     <fragment
         android:id="@+id/faqsFragment"
         android:name="com.example.cafeteria_nohands.src.about.FaqsFragment"

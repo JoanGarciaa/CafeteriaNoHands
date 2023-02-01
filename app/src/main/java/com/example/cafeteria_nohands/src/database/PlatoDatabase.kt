@@ -1,13 +1,13 @@
-package com.example.cafeteria_nohands.src.model
+package com.example.cafeteria_nohands.src.database
 
 
 import android.content.Context
 import androidx.room.*
-import androidx.room.migration.Migration
-import androidx.sqlite.db.SupportSQLiteDatabase
+import com.example.cafeteria_nohands.src.model.Plato
+import com.example.cafeteria_nohands.src.model.Usuari
 
 @Database(
-    entities = [Plato::class,Usuari::class],
+    entities = [Plato::class, Usuari::class],
     version = 1,
     exportSchema = true
 )
@@ -15,17 +15,15 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 abstract class PlatoDatabase : RoomDatabase() {
 
     abstract fun platoDao(): PlatoDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
         private var INSTANCE: PlatoDatabase? = null
 
         fun getDatabase(context: Context): PlatoDatabase {
-            // if the INSTANCE is not null, then return it,
-            // if it is, then create the database
             if (INSTANCE == null) {
                 synchronized(this) {
-                    // Pass the database to the INSTANCE
                     INSTANCE = buildDatabase(context)
                 }
             }

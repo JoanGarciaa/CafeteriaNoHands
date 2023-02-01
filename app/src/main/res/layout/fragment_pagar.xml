@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.cafeteria_nohands.src.model.OrderViewModel" />
+            type="com.example.cafeteria_nohands.src.viewmodel.OrderViewModel" />
         <variable
             name="pagarfragment"
             type="com.example.cafeteria_nohands.src.fragment.compra.PagarFragment" />

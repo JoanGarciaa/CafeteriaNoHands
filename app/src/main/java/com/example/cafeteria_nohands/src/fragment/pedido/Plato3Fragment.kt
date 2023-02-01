@@ -1,31 +1,23 @@
 package com.example.cafeteria_nohands.src.fragment.pedido
 
-import android.icu.text.Transliterator.Position
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteria_nohands.R
-import com.example.cafeteria_nohands.databinding.FragmentPlato1Binding
-import com.example.cafeteria_nohands.databinding.FragmentPlato2Binding
 import com.example.cafeteria_nohands.databinding.FragmentPlato3Binding
 import com.example.cafeteria_nohands.src.adapter.PlatoRVAdapter
 import com.example.cafeteria_nohands.src.adapter.RecyclerClickListener
 //import com.example.cafeteria_nohands.src.adapter.ListAdapter
-import com.example.cafeteria_nohands.src.data.Provider
-import com.example.cafeteria_nohands.src.model.OrderViewModel
-import com.example.cafeteria_nohands.src.model.Plato
+import com.example.cafeteria_nohands.src.viewmodel.OrderViewModel
 
 class Plato3Fragment : Fragment() {
 
@@ -65,9 +57,7 @@ class Plato3Fragment : Fragment() {
                 val platoList = adapter.currentList.toMutableList()
                 sharedViewModel.setPlato(platoList[position])
                 Toast.makeText(requireContext(),"Postre Añadido" , Toast.LENGTH_SHORT).show()
-
             }
-
         })
         platoRecyclerview.adapter = adapter
     }

@@ -1,7 +1,6 @@
 package com.example.cafeteria_nohands.src.fragment.pedido
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,19 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Index.Order
 import com.example.cafeteria_nohands.R
 import com.example.cafeteria_nohands.databinding.FragmentPlato1Binding
 import com.example.cafeteria_nohands.src.adapter.PlatoRVAdapter
 import com.example.cafeteria_nohands.src.adapter.RecyclerClickListener
-import com.example.cafeteria_nohands.src.data.Provider
-import com.example.cafeteria_nohands.src.model.OrderViewModel
-import com.example.cafeteria_nohands.src.model.Plato
-import kotlinx.coroutines.launch
+import com.example.cafeteria_nohands.src.viewmodel.OrderViewModel
 
 class Plato1Fragment : Fragment() {
 

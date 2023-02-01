@@ -2,34 +2,33 @@ package com.example.cafeteria_nohands.src.repository
 
 import android.content.Context
 import androidx.lifecycle.LiveData
-import com.example.cafeteria_nohands.src.model.Plato
 import com.example.cafeteria_nohands.src.database.PlatoDatabase
 import com.example.cafeteria_nohands.src.model.Usuari
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class PlatoRepositori {
+class UserRepositori {
+
     companion object{
         var platosDatabase: PlatoDatabase? = null
+        var usuari:LiveData<List<Usuari>>? = null
 
         fun initializeDB(context: Context): PlatoDatabase {
             return PlatoDatabase.getDatabase(context)
         }
 
-        fun getPlatos1(context: Context): LiveData<List<Plato>> {
+        fun userLogin(context: Context, nombre:String, password:String): LiveData<List<Usuari>>? {
             platosDatabase = initializeDB(context)
-            return platosDatabase!!.platoDao().getPlatos1()
+            usuari = platosDatabase!!.userDao().loginUser(nombre,password)
+            return usuari
         }
 
-        fun getPlatos2(context: Context): LiveData<List<Plato>> {
+        fun insertUsuari(context: Context, usuari: Usuari){
             platosDatabase = initializeDB(context)
-            return platosDatabase!!.platoDao().getPlatos2()
-        }
-
-        fun getPlatos3(context: Context): LiveData<List<Plato>> {
-            platosDatabase = initializeDB(context)
-            return platosDatabase!!.platoDao().getPlatos3()
+            CoroutineScope(Dispatchers.IO).launch {
+                platosDatabase!!.userDao().addUser(usuari)
+            }
         }
 
     }
