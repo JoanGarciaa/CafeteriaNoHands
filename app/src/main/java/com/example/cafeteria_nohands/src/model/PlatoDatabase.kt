@@ -38,9 +38,7 @@ abstract class PlatoDatabase : RoomDatabase() {
                 context.applicationContext,
                 PlatoDatabase::class.java,
                 "platos_database"
-            )
-                //.addMigrations(MIGRATION_1_2)
-                .build()
+            ).createFromAsset("databases/platos.db").build()
         }
     }
 }

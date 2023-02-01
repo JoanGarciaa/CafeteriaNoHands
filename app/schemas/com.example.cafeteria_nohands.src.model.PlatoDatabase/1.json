@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "77df67e15a1ba8076b56a7dad753ed83",
+    "identityHash": "4579c93a4bcad292ec6c665d3b5bd310",
     "entities": [
       {
         "tableName": "platos",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombrePlato` TEXT NOT NULL, `detallesPlato` TEXT NOT NULL, `precioPlato` INTEGER NOT NULL, `imgPlato` INTEGER NOT NULL, PRIMARY KEY(`nombrePlato`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombrePlato` TEXT NOT NULL, `detallesPlato` TEXT NOT NULL, `precioPlato` INTEGER NOT NULL, `categoria` INTEGER NOT NULL, PRIMARY KEY(`nombrePlato`))",
         "fields": [
           {
             "fieldPath": "nombre",
@@ -27,8 +27,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "image",
-            "columnName": "imgPlato",
+            "fieldPath": "categoria",
+            "columnName": "categoria",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -46,7 +46,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '77df67e15a1ba8076b56a7dad753ed83')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4579c93a4bcad292ec6c665d3b5bd310')"
     ]
   }
 }

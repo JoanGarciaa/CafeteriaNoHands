@@ -4,10 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-//data class Plato(val nombre : String, val detalles : String, val precio : Int, val image : Int)
-
-
-
 @Entity(tableName = "platos")
     data class Plato(
         @PrimaryKey
@@ -17,7 +13,7 @@ import androidx.room.PrimaryKey
         var detalles: String,
         @ColumnInfo(name = "precioPlato")
         val precio: Int,
-        @ColumnInfo(name = "imgPlato")
-        val image: Int,
+        @ColumnInfo(name = "categoria")
+        val categoria: Int,
 )
 
