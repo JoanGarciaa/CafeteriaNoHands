@@ -16,5 +16,7 @@ interface PlatoDao {
     @Query("SELECT * FROM platos WHERE categoria = 3")
     fun getPlatos3(): LiveData<List<Plato>>
 
+    @Query("SELECT * FROM usuaris WHERE user=:usuari & password=:contraseña")
+    fun loginUser(usuari:String, contraseña:String): LiveData<List<Usuari>>
 
 }

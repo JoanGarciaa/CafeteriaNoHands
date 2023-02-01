@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4579c93a4bcad292ec6c665d3b5bd310",
+    "identityHash": "a06a308741c54c9c8b6e9432776957dc",
     "entities": [
       {
         "tableName": "platos",
@@ -41,12 +41,56 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "usuaris",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nombre` TEXT NOT NULL, `email` TEXT NOT NULL, `user` TEXT NOT NULL, `password` TEXT NOT NULL, `Id` INTEGER PRIMARY KEY AUTOINCREMENT)",
+        "fields": [
+          {
+            "fieldPath": "nombre",
+            "columnName": "nombre",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "user",
+            "columnName": "user",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "Id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4579c93a4bcad292ec6c665d3b5bd310')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a06a308741c54c9c8b6e9432776957dc')"
     ]
   }
 }
