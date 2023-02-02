@@ -10,7 +10,7 @@ public class OrderViewModel : ViewModel() {
 
     val listData = ArrayList<Plato>()
     var plato : LiveData<List<Plato>>?=null;
-
+    var historial = ArrayList<Plato>()
 
     fun setPlato(plato: Plato){
         listData.add(plato)
@@ -33,6 +33,18 @@ public class OrderViewModel : ViewModel() {
     fun getPlatos3(context: Context): LiveData<List<Plato>>?{
         plato = PlatoRepositori.getPlatos3(context)
         return plato
+    }
+
+    fun setHistorial(plato: Plato){
+        historial.add(plato)
+    }
+
+    fun getHistorial(context: Context): ArrayList<Plato>{
+        return historial
+    }
+
+    fun deleteHistorial(plato:Plato){
+        listData.removeAll(listOf(plato).toSet())
     }
 
 

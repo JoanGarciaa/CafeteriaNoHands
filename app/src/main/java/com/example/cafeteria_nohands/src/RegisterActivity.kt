@@ -41,9 +41,15 @@ class RegisterActivity : AppCompatActivity() {
             password = findViewById<EditText>(R.id.editTextRegisterPassword).text.toString()
             intentLogin.putExtra("username", user.toString())
             intentLogin.putExtra("password", password.toString())
-            usuariViewModel.newUser(this,nombre,email, user,password)
-            Toast.makeText(this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show()
-            startActivity(intentLogin)
+            if(nombre.isEmpty()||email.isEmpty()||user.isEmpty()||password.isEmpty()){
+                Toast.makeText(this, "Necesitas rellenar todos los campos", Toast.LENGTH_SHORT).show()
+
+            }else{
+                usuariViewModel.newUser(this,nombre,email, user,password)
+                Toast.makeText(this, "Usuario creado correctamente", Toast.LENGTH_SHORT).show()
+                startActivity(intentLogin)
+            }
+
         }
 
 

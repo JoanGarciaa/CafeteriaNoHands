@@ -57,6 +57,7 @@ class Plato3Fragment : Fragment() {
                 val platoList = adapter.currentList.toMutableList()
                 sharedViewModel.setPlato(platoList[position])
                 Toast.makeText(requireContext(),"Postre Añadido" , Toast.LENGTH_SHORT).show()
+                view?.findNavController()?.navigate(R.id.action_plato3Fragment_to_pagarFragment)
             }
         })
         platoRecyclerview.adapter = adapter

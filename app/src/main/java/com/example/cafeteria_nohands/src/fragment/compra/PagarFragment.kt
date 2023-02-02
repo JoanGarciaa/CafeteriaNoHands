@@ -15,6 +15,7 @@ import com.example.cafeteria_nohands.R
 import com.example.cafeteria_nohands.databinding.FragmentPagarBinding
 import com.example.cafeteria_nohands.src.adapter.PlatoRVAdapter
 import com.example.cafeteria_nohands.src.adapter.RecyclerClickListener
+import com.example.cafeteria_nohands.src.model.Plato
 import com.example.cafeteria_nohands.src.viewmodel.OrderViewModel
 
 
@@ -41,8 +42,15 @@ class PagarFragment : Fragment() {
         observePlato()
 
         binding.buttonPagar.setOnClickListener{
+            val platoList = adapter.currentList.toMutableList()
+            sharedViewModel.setHistorial(platoList[0])
+            sharedViewModel.setHistorial(platoList[1])
+            sharedViewModel.setHistorial(platoList[2])
             view?.findNavController()?.navigate(R.id.action_pagarFragment_to_historialFragment)
             Toast.makeText(requireContext(),"Gracias por tu compra! BUEN PROVECHO!" , Toast.LENGTH_SHORT).show()
+            sharedViewModel.deleteHistorial(platoList[0])
+            sharedViewModel.deleteHistorial(platoList[1])
+            sharedViewModel.deleteHistorial(platoList[2])
         }
         setHasOptionsMenu(true)
         return binding.root

@@ -42,16 +42,20 @@ class LoginActivity : AppCompatActivity() {
         mostrarPassword.setText(password)
 
 
-
         buttonLogin.setOnClickListener(){
             var nombreLogin = findViewById<EditText>(R.id.editTextTextPersonName).text.toString()
             var passwordLogin = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
 
-            usuariViewModel.loginClient(this,nombreLogin,passwordLogin)!!.observe(this, Observer {llistaUser ->
-                Toast.makeText(this,"Bienvenido: ${llistaUser[0].user}" , Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            })
+            if(nombreLogin.isEmpty() || passwordLogin.isEmpty()){
+                Toast.makeText(this,"Rellena los campos" , Toast.LENGTH_SHORT).show()
+            }else{
+                usuariViewModel.loginClient(this,nombreLogin,passwordLogin)!!.observe(this, Observer {llistaUser ->
+                    Toast.makeText(this,"Bienvenido: ${llistaUser[0].user}" , Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                })
+            }
+
         }
 
 //        buttonLogin.setOnClickListener() {

@@ -1,21 +1,22 @@
 package com.example.cafeteria_nohands.src.fragment.compra
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cafeteria_nohands.R
 import com.example.cafeteria_nohands.databinding.FragmentHistorialBinding
-import com.example.cafeteria_nohands.databinding.FragmentPagarBinding
 import com.example.cafeteria_nohands.src.adapter.PlatoRVAdapter
 import com.example.cafeteria_nohands.src.adapter.RecyclerClickListener
 import com.example.cafeteria_nohands.src.viewmodel.OrderViewModel
+
 
 class HistorialFragment : Fragment() {
 
@@ -37,7 +38,6 @@ class HistorialFragment : Fragment() {
             false
         );
         platoViewModel = ViewModelProvider(this).get(OrderViewModel::class.java)
-
         setRecyclerView()
         observePlato()
 
@@ -52,6 +52,7 @@ class HistorialFragment : Fragment() {
         platoRecyclerview.layoutManager = LinearLayoutManager(requireContext())
         platoRecyclerview.setHasFixedSize(true)
         adapter = PlatoRVAdapter()
+        binding.progressBar.visibility = View.GONE
         adapter.setItemListener(object : RecyclerClickListener {
 
             override fun onItemClick(position: Int) {
@@ -63,10 +64,22 @@ class HistorialFragment : Fragment() {
     }
 
     private fun observePlato() {
-        adapter.submitList(
-            sharedViewModel.getPlatos()
-        )
 
+        adapter.submitList(
+            sharedViewModel.getHistorial(requireContext())
+        )
+        setTotalPrice()
+
+
+    }
+
+    fun setTotalPrice(){
+        var platoList = adapter.currentList.toMutableList()
+        var precio = 0
+        for (plato in platoList){
+            precio += plato.precio
+        }
+        binding.textViewPrecioHistorial.text = "Precio total de comandas: " + precio.toString() + " €"
     }
 
 

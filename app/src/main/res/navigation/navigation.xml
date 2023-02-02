@@ -47,7 +47,9 @@
         tools:layout="@layout/fragment_pagar" >
         <action
             android:id="@+id/action_pagarFragment_to_historialFragment"
-            app:destination="@id/historialFragment" />
+            app:destination="@id/historialFragment"
+            app:popUpTo="@id/initFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/faqsFragment"

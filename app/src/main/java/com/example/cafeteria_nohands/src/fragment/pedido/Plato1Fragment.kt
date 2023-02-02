@@ -57,6 +57,7 @@ class Plato1Fragment : Fragment() {
                 val platoList = adapter.currentList.toMutableList()
                 sharedViewModel.setPlato(platoList[position])
                 Toast.makeText(requireContext(),"Primer Plato Añadido" , Toast.LENGTH_SHORT).show()
+                view?.findNavController()?.navigate(R.id.action_plato1Fragment_to_plato2Fragment)
             }
 
         })

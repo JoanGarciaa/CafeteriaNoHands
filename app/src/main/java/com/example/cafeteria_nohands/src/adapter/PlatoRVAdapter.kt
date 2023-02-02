@@ -1,16 +1,18 @@
 package com.example.cafeteria_nohands.src.adapter
 
+import android.annotation.SuppressLint
+import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.cafeteria_nohands.R
 import com.example.cafeteria_nohands.src.model.Plato
 
@@ -44,6 +46,11 @@ class   PlatoRVAdapter : ListAdapter<Plato, PlatoRVAdapter.PlatoHolder>(DiffCall
         precio.text = currentItem.precio.toString()
         val detalles = holder.itemView.findViewById<TextView>(R.id.item_detal)
         detalles.text = currentItem.detalles
+        var img = currentItem.nombre + ".png"
+        Log.e(img,"img")
+        // Close to working
+        Glide.with(holder.itemView).load("C:\\Users\\Joan Garcia\\AndroidStudioProjects\\CafeteriaNoHands-main\\CafeteriaNoHands\\app\\src\\main\\res\\drawable\\" + img).into(holder.itemView.findViewById(R.id.item_image));
+
     }
 
     class DiffCallback : DiffUtil.ItemCallback<Plato>() {
