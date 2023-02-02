@@ -41,12 +41,11 @@ class LoginActivity : AppCompatActivity() {
         mostrarUser.setText(user)
         mostrarPassword.setText(password)
 
-        lateinit var nombreLogin : String
-        lateinit var passwordLogin : String
+
 
         buttonLogin.setOnClickListener(){
-            nombreLogin = findViewById<EditText>(R.id.editTextTextPersonName).text.toString()
-            passwordLogin = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
+            var nombreLogin = findViewById<EditText>(R.id.editTextTextPersonName).text.toString()
+            var passwordLogin = findViewById<EditText>(R.id.editTextTextPassword).text.toString()
 
             usuariViewModel.loginClient(this,nombreLogin,passwordLogin)!!.observe(this, Observer {llistaUser ->
                 Toast.makeText(this,"Bienvenido: ${llistaUser[0].user}" , Toast.LENGTH_SHORT).show()
