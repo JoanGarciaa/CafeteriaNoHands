@@ -45,7 +45,7 @@ class InitFragment : Fragment() {
         val id = item.itemId
 
         if (id == R.id.closeApp) {
-            activity?.finish()
+            System.exit(0)
         }
         return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
